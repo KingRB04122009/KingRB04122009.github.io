@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#ABOUT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+/* Full-width wrapper but with comfortable side padding */
+.about-wrap.wide{
+  width: 100%;
+  margin: 40px 0;
+  padding: 0 24px; /* space from the viewport edges */
+}
+
+/* Big box remains, now stretches full width */
+.about-box{
+  background: #ffffff;
+  border: 2px solid #e6e6e6;
+  border-radius: 16px;
+  padding: 36px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.06);
+  margin-right: 100px;
+  width: 1400px;
+  margin-left: 100px;
+}
+
+/* Wider grid so both columns are big and eye-catching */
+.about-grid.wide{
+  display: grid;
+  grid-template-columns: minmax(380px, 520px) 1fr; /* larger about card, flexible right column */
+  gap: 44px; /* generous gap between columns */
+  align-items: start;
+}
+
+@media (max-width: 1100px){
+  .about-grid.wide{
+    grid-template-columns: 1fr; /* stack on small screens */
+    gap: 28px;
+  }
+}
+
+/* About card scales up inside the full-width layout */
+.about-card{
+  position: relative;
+  background: linear-gradient(180deg, #6fd0ff, #7a4bff);
+  color: #fff;
+  border-radius: 22px;
+  padding: 120px 28px 28px; /* more breathing room */
+  box-shadow: 0 10px 25px rgba(50,50,93,.12), 0 8px 12px rgba(0,0,0,.08);
+  min-height: 560px;
+  text-align: center;
+  font-family: 'Comic Neue', sans-serif;
+}
+
+.about-avatar{
+  position: absolute;
+  top: -56px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 200px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #d9d9d9;
+  border: 2px dashed rgba(0,0,0,.15);
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-weight: 700;
+}
+
+.about-tag{
+  display: inline-block;
+  background: #c9ffa0;
+  color: #111;
+  border-radius: 12px;
+  padding: 12px 18px;
+  font-weight: 700;
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  margin-top: 74px;
+}
+.about-tag--big{
+  font-size: 36px; /* matches/edges the experience title for impact */
+}
+
+/* Bullet text larger for readability */
+.about-list{
+  list-style: none;
+  padding: 0 10px;
+  margin: 18px 0 0;
+  color: #f1eaff;
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: center;
+}
+.about-list li{ margin: 12px 0; }
+.about-list li::before{ content: "• "; color: #fff; }
+
+/* Experience text enlarged for comfortable reading on wide layouts */
+.exp-title{
+  display: inline-block;
+  background: #c9ffa0;
+  color: #222;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 36px;
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  margin: 0 0 16px;
+  margin-bottom: 40px;
+}
+
+.exp-list{
+  list-style: none;
+  padding: 0 10px;
+  margin: 18px 0 0;
+  color: #000000;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.about-text{
+  max-width: 80ch; /* readable line length; remove if you want it to run full width */
+}
+.about-text p{
+  margin: 0 0 14px;
+  color: #333;
+  line-height: 1.65;
+  font-size: 18px;
+}
+
+/* Ensure the big box edges don’t hug the viewport on small screens */
+@media (max-width: 640px){
+  .about-wrap.wide{ padding: 0 14px; }
+  .about-box{ padding: 22px; }
+  .about-avatar{ width: 170px; height: 170px; top: -46px; }
+  .about-tag--big, .exp-title{ font-size: 30px; }
+  .about-text p{ font-size: 16px; }
+}
+</style>
+<body>
+
+<header>
+    <h1>RISHI BOYAT</h1>
+    <nav>
+        <a href="home.html">#HOME</a>
+        <a href="about.html" class="active">#ABOUT</a>
+        <a href="portfolios.html">#PORTFOLIO</a>
+    </nav>
+</header>
+
+<main class="about-wrap wide">
+  <section class="about-box">
+    <div class="about-grid wide">
+      <!-- Left: about card -->
+      <div class="about-card">
+        <div class="about-avatar" aria-label="image placeholder">Image Placeholder</div>
+        <div class="about-tag about-tag--big">#ABOUT_ME</div>
+        <ul class="about-list">
+          <li>Born in Japan, I moved to Hong Kong and studied at WIS until Year 9 before transferring to HKIS for my continued education.</li>
+          <li>I am a passionate tennis player, actively participating in tournaments in Hong Kong, including the SCAA, CRC, and Nissin Cup, with a current ranking of 54.</li>
+          <li>Alongside my love for tennis, I am equally passionate about coding and aspire to build more websites while teaching children the fundamentals of programming.</li>
+        </ul>
+      </div>
+
+      <!-- Right: text block -->
+      <div class="about-text">
+        <h2 class="exp-title">#MY_EXPERIENCE</h2>
+        <ul class="exp-list">
+          <li><strong>• Attended WIS from Year 1 to Year 9:</strong> My foundational years at WIS were crucial for my personal and academic growth. During this time, I developed a love for learning and built lasting friendships.</li>
+          <li><strong>• Worked in SDLT during Year 9:</strong> In this role, I had the opportunity to help parents understand coding concepts, which enhanced my communication skills and reinforced my knowledge. I also played a key part in implementing ChatGPT in the school, focusing on its positive applications to enhance learning and support students.</li>
+          <li><strong>• Transferred to HKIS in Grade 8:</strong> Moving to HKIS marked a significant transition in my education. The new environment challenged me academically and socially, and I quickly adapted to the school's dynamic atmosphere.</li>
+          <li><strong>• Completed numerous coding classes:</strong> Since arriving at HKIS, I have taken various coding classes that deepened my understanding of programming languages and software development. I am excited to continue my coding journey, exploring new technologies and expanding my skill set further.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <!-- Brand block -->
+    <div class="footer-brand">
+      <div class="brand-badge">RB</div>
+      <div class="brand-meta">
+        <h3>RISHI BOYAT</h3>
+        <p>Design • Code • Create</p>
+      </div>
+    </div>
+
+    <!-- Contacts -->
+    <div class="footer-contacts">
+      <h3 class="footer-title">#CONTACTS:</h3>
+      <nav class="contact-links" aria-label="Social links">
+        <a href="https://github.com/KingRB04122009" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:rishi.boyat@gmail.com">Gmail</a>
+        <a href="https://instagram.com/rishiboyat12" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="chips">
+      <span class="chip">#on_court 🎾</span>
+      <span class="chip">#in_class 💻</span>
+      <span class="chip">#in_code 📚</span>
+    </div>
+    <p class="legal">© <span id="year">2025</span> Rishi Boyat. All rights reserved.</p>
+  </div>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#PORTFOLIO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    :root {
+      --bg: #f7f7fb;
+      --card: #ffffff;
+      --ink: #111;
+      --muted: #5f6570;
+      --brand: #6a11cb;
+      --brand-2: #cfffb1;
+      --ring: #e6e6ef;
+      --shadow: 0 12px 40px rgba(0,0,0,.10);
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Comic Neue", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    a { color: inherit; }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 28px auto 60px;
+      padding: 0 16px;
+    }
+
+    header.page-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+    .page-head h1 { margin: 0; font-size: 36px; }
+    .page-head p { margin: 0; color: var(--muted); font-size: 16px; }
+
+    /* Grid: force single column on all screens */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    /* Card */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--ring);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      min-height: 320px;
+      margin-bottom: 0;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: #d7d7ec;
+      box-shadow: var(--shadow);
+    }
+
+    /* Alternate layout: image left or right */
+    .media {
+      position: relative;
+      min-height: 280px;
+      background: #e9ecf3;
+    }
+    .media a { display: block; height: 100%; }
+    .media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .35s ease, filter .35s ease;
+    }
+    .card:hover .media img { transform: scale(1.03); filter: saturate(1.05); }
+
+    .body {
+      padding: 24px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      justify-content: center;
+    }
+    .title {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.2;
+    }
+    .desc {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+    .more {
+      display: none;
+      color: var(--muted);
+      margin-top: 2px;
+      font-size: 15px;
+    }
+
+    /* Show more button */
+    .toggle {
+      align-self: flex-start;
+      background: #eef1f6;
+      border: 1px solid var(--ring);
+      padding: 8px 12px;
+      border-radius: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color .2s, color .2s, transform .2s, box-shadow .2s;
+    }
+    .toggle:hover {
+      background: var(--brand-2);
+      color: var(--brand);
+      transform: translateY(-1px);
+      box-shadow: 0 3px 10px rgba(0,0,0,.06);
+    }
+
+    /* Small screens: keep one per row and stack vertically */
+    @media (max-width: 700px) {
+      .card {
+        grid-template-columns: 1fr;
+        min-height: 0;
+      }
+      .media { min-height: 220px; }
+      .media { order: 0; }
+      .card.alt .media { order: 2; }
+    }
+
+    /* Focus styles for accessibility */
+    .toggle:focus-visible, .media a:focus-visible {
+      outline: 3px solid #a7d3ff;
+      outline-offset: 2px;
+      border-radius: 8px;
+    }
+
+    /* Small caption under image on hover */
+    .media .visit {
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+      background: rgba(255,255,255,.9);
+      padding: 6px 10px;
+      border-radius: 10px;
+      font-size: 12px;
+      border: 1px solid var(--ring);
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity .2s, transform .2s;
+    }
+    .card:hover .visit { opacity: 1; transform: translateY(0); }
+</style>
+<body>
+  <header>
+    <h1>RISHI BOYAT</h1>
+    <nav>
+      <a href="home.html">#HOME</a>
+      <a href="about.html">#ABOUT</a>
+      <a href="portfolios.html" class="active">#PORTFOLIO</a>
+    </nav>
+  </header>
+
+  <div class="wrap">
+    <header class="page-head">
+      <h1>#PORTFOLIOS</h1>
+      <p>Selected projects — click an image to open the project.</p>
+    </header>
+
+    <section class="grid" aria-label="Project grid">
+      <!-- Card 1: image left -->
+      <article class="card">
+        <figure class="media">
+          <a href="https://example.com/project-1" target="_blank" rel="noopener noreferrer" aria-label="Open Project 1">
+            <img src="https://picsum.photos/seed/p1/1200/800" alt="Project 1 preview">
+            <span class="visit">Visit project ↗</span>
+          </a>
+        </figure>
+        <div class="body">
+          <h3 class="title">Project One — OnlyFriends</h3>
+          <p class="desc">OnlyFriends is a prototype social app developed using Xcode, showcasing my coding skills by allowing users to create accounts, add friends, and unlock new friends with varying rarity levels for a gamified experience</p>
+          <p class="more">Developed collaboratively in my computer science class, this app emphasizes creativity and user engagement, featuring personalized profiles and a unique rarity system for friendships.</p>
+          <button class="toggle" data-target="more-1" aria-expanded="false" aria-controls="more-1">Show more</button>
+          <span id="more-1" hidden></span>
+        </div>
+      </article>
+
+      <!-- Card 2: image right -->
+      <article class="card alt">
+        <div class="body">
+          <h3 class="title">Project Two — Task Flow</h3>
+          <p class="desc">The Slots App is a fun prototype game created in Xcode, where users spin the slots to see whether they lose or gain credits, adding excitement and an element of chance.</p>
+          <p class="more">Developed independently in my computer science class, the app features a straightforward interface for tracking credits and provides an engaging way to enjoy the thrill of gambling without real stakes.</p>
+          <button class="toggle" data-target="more-2" aria-expanded="false" aria-controls="more-2">Show more</button>
+          <span id="more-2" hidden></span>
+        </div>
+        <figure class="media">
+          <a href="https://example.com/project-2" target="_blank" rel="noopener noreferrer" aria-label="Open Project 2">
+            <img src="https://picsum.photos/seed/p2/1200/800" alt="Project 2 preview">
+            <span class="visit">Visit project ↗</span>
+          </a>
+        </figure>
+      </article>
+
+      <!-- Card 3: image left -->
+      <article class="card">
+        <figure class="media">
+          <a href="https://example.com/project-3" target="_blank" rel="noopener noreferrer" aria-label="Open Project 3">
+            <img src="https://picsum.photos/seed/p3/1200/800" alt="Project 3 preview">
+            <span class="visit">Visit project ↗</span>
+          </a>
+        </figure>
+        <div class="body">
+          <h3 class="title">Project Three — Tennis Stats Tracker</h3>
+          <p class="desc">Track matches, serve percentages, and rally length with clean charts and simple input after play.</p>
+          <p class="more">Uses PWA install, client‑side only storage, and a compact data model so recording a match takes under a minute.</p>
+          <button class="toggle" data-target="more-3" aria-expanded="false" aria-controls="more-3">Show more</button>
+          <span id="more-3" hidden></span>
+        </div>
+      </article>
+    </section>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <!-- Brand block -->
+      <div class="footer-brand">
+        <div class="brand-badge">RB</div>
+        <div class="brand-meta">
+          <h3>RISHI BOYAT</h3>
+          <p>Design • Code • Create</p>
+        </div>
+      </div>
+
+      <!-- Contacts -->
+      <div class="footer-contacts">
+        <h3 class="footer-title">#CONTACTS:</h3>
+        <nav class="contact-links" aria-label="Social links">
+          <a href="https://github.com/KingRB04122009" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="mailto:rishi.boyat@gmail.com">Gmail</a>
+          <a href="https://instagram.com/rishiboyat12" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="chips">
+        <span class="chip">#on_court 🎾</span>
+        <span class="chip">#in_class 💻</span>
+        <span class="chip">#in_code 📚</span>
+      </div>
+      <p class="legal">© <span id="year">2025</span> Rishi Boyat. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Expand/collapse logic with accessible state updates
+    document.querySelectorAll('.toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const moreP = btn.previousElementSibling; // .more paragraph
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        moreP.style.display = expanded ? 'none' : 'block';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        btn.textContent = expanded ? 'Show more' : 'Show less';
+      });
+    });
+
+    // Update year automatically
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
