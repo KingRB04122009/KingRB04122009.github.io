@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>#CONTACT</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .contact-wrap{
+      max-width: 900px;
+      margin: 28px auto 60px;
+      padding: 0 16px;
+    }
+    .contact-hero{
+      background:
+        radial-gradient(800px 220px at 60% -10%, rgba(165,143,255,.18), transparent 60%),
+        linear-gradient(180deg, #ffffff 0%, #f9f9fd 100%);
+      border: 1px solid #ececf3;
+      border-radius: 18px;
+      box-shadow: 0 8px 26px rgba(0,0,0,.06);
+      padding: 20px;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+    .contact-grid{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .card{
+      background: #fff;
+      border: 1px solid #e6e6ef;
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 2px 10px rgba(0,0,0,.04);
+    }
+    form{
+      display: grid;
+      gap: 12px;
+    }
+    label{ font-weight: 600; }
+    input, textarea{
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #e1e3ea;
+      border-radius: 10px;
+      font: inherit;
+      background: #fff;
+    }
+    textarea{ min-height: 120px; resize: vertical; }
+    .actions{ display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn.primary{ border: none; }
+    .contact-list{
+      display: grid;
+      gap: 8px;
+    }
+    .contact-list a{
+      color: var(--brand);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .contact-list a:hover{ text-decoration: underline; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>RISHI BOYAT</h1>
+  <nav>
+    <a href="index.html">#HOME</a>
+    <a href="about.html">#ABOUT</a>
+    <a href="portfolios.html">#PORTFOLIO</a>
+    <a href="contact.html" class="active">#CONTACT</a>
+  </nav>
+</header>
+
+<main class="contact-wrap">
+  <section class="contact-hero">
+    <h1>#CONTACT_ME</h1>
+    <p>I’d love to hear from you. Use the form below or reach me via email and social links.</p>
+  </section>
+
+  <div class="contact-grid">
+    <section class="card" aria-labelledby="form-title">
+      <h2 id="form-title">Send a message</h2>
+      <form action="https://formspree.io/f/your-id" method="POST">
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div>
+          <label for="subject">Subject</label>
+          <input id="subject" name="subject" type="text" required>
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <div class="actions">
+          <button class="btn primary" type="submit">Send Message</button>
+          <button class="btn" type="reset">Clear</button>
+        </div>
+      </form>
+      <p class="muted" style="color:#5f6570; margin-top:8px;">Note: You can configure the action URL to your preferred form handler.</p>
+    </section>
+
+    <section class="card" aria-labelledby="direct-title">
+      <h2 id="direct-title">Direct contacts</h2>
+      <div class="contact-list">
+        <a href="mailto:rishi.boyat@gmail.com">rishi.boyat@gmail.com</a>
+        <a href="tel:+0000000000">+0 000 000 0000</a>
+        <a href="https://github.com/KingRB04122009" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://instagram.com/rishiboyat12" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="brand-badge">RB</div>
+      <div class="brand-meta">
+        <h3>RISHI BOYAT</h3>
+        <p>Design • Code • Create</p>
+      </div>
+    </div>
+
+    <div class="footer-contacts">
+      <h3 class="footer-title">#CONTACTS:</h3>
+      <nav class="contact-links" aria-label="Social links">
+        <a href="contact.html">Contact Form</a>
+        <a href="mailto:rishi.boyat@gmail.com">Gmail</a>
+        <a href="https://github.com/KingRB04122009" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://instagram.com/rishiboyat12" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="chips">
+      <span class="chip">#on_court 🎾</span>
+      <span class="chip">#in_class 💻</span>
+      <span class="chip">#in_code 📚</span>
+    </div>
+    <p class="legal">© <span id="year">2025</span> Rishi Boyat. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

@@ -72,7 +72,7 @@
     }
     .btn{
       appearance:none; border:1px solid var(--ring);
-      background:#fff; color:#111; font-weight:800;
+      background:#fff; color:#111; font-weight:700;
       padding:10px 16px; border-radius:12px; cursor:pointer;
       text-decoration:none; display:inline-flex; align-items:center; gap:8px;
       transition: background-color .2s, color .2s, transform .2s, box-shadow .2s;
@@ -124,7 +124,7 @@
     .tile h3{ margin:0 0 6px; font-size:20px;}
     .tile p{ margin:0; color:var(--muted); }
 
-    /* Featured projects preview (mirrors portfolio vibe) */
+    /* Featured projects preview */
     .featured{
       margin-top: 40px;
     }
@@ -185,13 +185,13 @@
   </style>
 </head>
 <body>
-
 <header>
   <h1>RISHI BOYAT</h1>
   <nav>
     <a href="index.html" class="active">#HOME</a>
     <a href="about.html">#ABOUT</a>
     <a href="portfolios.html">#PORTFOLIO</a>
+    <a href="contact.html">#CONTACT</a>
   </nav>
 </header>
 
@@ -221,8 +221,8 @@
   <!-- Highlights -->
   <section class="highlights" aria-label="Highlights">
     <article class="tile">
-      <h3>Clean, Fun UI</h3>
-      <p>Bright accents, Comic Neue vibes, and interaction details that feel alive but stay accessible.</p>
+      <h3>Clean, Professional UI</h3>
+      <p>Consistent typography, crisp spacing, and interaction details that feel alive and accessible.</p>
     </article>
     <article class="tile">
       <h3>Performance & Basics</h3>
@@ -245,24 +245,24 @@
       <!-- Card A -->
       <article class="fcard">
         <figure class="fmedia">
-          <img src="" alt="OnlyFriends">
+          <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'%3E%3Crect width='100%25' height='100%25' fill='%23e9ecf3'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23666' font-size='32'%3EOnlyFriends Preview%3C/text%3E%3C/svg%3E" alt="OnlyFriends preview">
         </figure>
         <div class="fbody">
           <h3>OnlyFriends</h3>
           <p>A unique social app that allows users to unlock new friends with varying rarity levels</p>
-          <a class="mini-link" href="portfolios.html#weather">Open in Portfolio →</a>
+          <a class="mini-link" href="portfolios.html#onlyfriends">Open in Portfolio →</a>
         </div>
       </article>
 
       <!-- Card B -->
       <article class="fcard">
         <figure class="fmedia">
-          <img src="" alt="Slots App">
+          <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'%3E%3Crect width='100%25' height='100%25' fill='%23e9ecf3'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23666' font-size='32'%3ESlots App Preview%3C/text%3E%3C/svg%3E" alt="Slots App preview">
         </figure>
         <div class="fbody">
           <h3>Slots App</h3>
           <p>Users can spin the slots to see whether they lose or gain credits</p>
-          <a class="mini-link" href="portfolios.html#taskflow">Open in Portfolio →</a>
+          <a class="mini-link" href="portfolios.html#slots">Open in Portfolio →</a>
         </div>
       </article>
     </div>
@@ -273,7 +273,8 @@
     <h3 id="cta-title">Want to collaborate or say hi?</h3>
     <p>I’m exploring new ideas and always up for learning. Reach out anytime.</p>
     <div class="cta-actions">
-      <a class="btn primary" href="mailto:rishi.boyat@gmail.com">Email Me</a>
+      <a class="btn primary" href="contact.html">Contact Form</a>
+      <a class="btn" href="mailto:rishi.boyat@gmail.com">Email</a>
       <a class="btn" href="https://github.com/KingRB04122009" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a class="btn" href="https://instagram.com/rishiboyat12" target="_blank" rel="noopener noreferrer">Instagram</a>
     </div>
@@ -295,8 +296,9 @@
     <div class="footer-contacts">
       <h3 class="footer-title">#CONTACTS:</h3>
       <nav class="contact-links" aria-label="Social links">
-        <a href="https://github.com/KingRB04122009" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="contact.html">Contact Form</a>
         <a href="mailto:rishi.boyat@gmail.com">Gmail</a>
+        <a href="https://github.com/KingRB04122009" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="https://instagram.com/rishiboyat12" target="_blank" rel="noopener noreferrer">Instagram</a>
       </nav>
     </div>
@@ -316,6 +318,5 @@
   // Update year automatically
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
-
 </body>
 </html>

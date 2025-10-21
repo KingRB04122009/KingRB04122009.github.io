@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>#PORTFOLIO</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>#PORTFOLIO</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
     :root {
       --bg: #f7f7fb;
       --card: #ffffff;
@@ -18,40 +17,27 @@
       --shadow: 0 12px 40px rgba(0,0,0,.10);
       --radius: 16px;
     }
-    * { box-sizing: border-box; }
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: "Comic Neue", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    }
-    a { color: inherit; }
-
     .wrap {
       max-width: 1200px;
       margin: 28px auto 60px;
       padding: 0 16px;
     }
-
     header.page-head {
       display: flex;
       align-items: baseline;
       justify-content: space-between;
       gap: 12px;
-      margin-bottom: 40px;
+      margin-bottom: 24px;
     }
-    .page-head h1 { margin: 0; font-size: 36px; }
+    .page-head h1 { margin: 0; font-size: 32px; }
     .page-head p { margin: 0; color: var(--muted); font-size: 16px; }
 
-    /* Grid: force single column on all screens */
     .grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 28px;
+      gap: 24px;
     }
 
-    /* Card */
     .card {
       background: var(--card);
       border: 1px solid var(--ring);
@@ -70,7 +56,6 @@
       box-shadow: var(--shadow);
     }
 
-    /* Alternate layout: image left or right */
     .media {
       position: relative;
       min-height: 280px;
@@ -90,27 +75,13 @@
       padding: 24px 22px;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 12px;
       justify-content: center;
     }
-    .title {
-      margin: 0;
-      font-size: 24px;
-      line-height: 1.2;
-    }
-    .desc {
-      margin: 0;
-      color: var(--muted);
-      font-size: 16px;
-    }
-    .more {
-      display: none;
-      color: var(--muted);
-      margin-top: 2px;
-      font-size: 15px;
-    }
+    .title { margin: 0; font-size: 22px; line-height: 1.2; }
+    .desc { margin: 0; color: var(--muted); font-size: 16px; }
+    .more { display: none; color: var(--muted); margin-top: 2px; font-size: 15px; }
 
-    /* Show more button */
     .toggle {
       align-self: flex-start;
       background: #eef1f6;
@@ -128,25 +99,19 @@
       box-shadow: 0 3px 10px rgba(0,0,0,.06);
     }
 
-    /* Small screens: keep one per row and stack vertically */
     @media (max-width: 700px) {
-      .card {
-        grid-template-columns: 1fr;
-        min-height: 0;
-      }
+      .card { grid-template-columns: 1fr; min-height: 0; }
       .media { min-height: 220px; }
       .media { order: 0; }
       .card.alt .media { order: 2; }
     }
 
-    /* Focus styles for accessibility */
     .toggle:focus-visible, .media a:focus-visible {
       outline: 3px solid #a7d3ff;
       outline-offset: 2px;
       border-radius: 8px;
     }
 
-    /* Small caption under image on hover */
     .media .visit {
       position: absolute;
       left: 10px;
@@ -161,123 +126,121 @@
       transition: opacity .2s, transform .2s;
     }
     .card:hover .visit { opacity: 1; transform: translateY(0); }
-</style>
+  </style>
+</head>
 <body>
-  <header>
-    <h1>RISHI BOYAT</h1>
-    <nav>
-      <a href="index.html">#HOME</a>
-      <a href="about.html">#ABOUT</a>
-      <a href="portfolios.html" class="active">#PORTFOLIO</a>
-    </nav>
+<header>
+  <h1>RISHI BOYAT</h1>
+  <nav>
+    <a href="index.html">#HOME</a>
+    <a href="about.html">#ABOUT</a>
+    <a href="portfolios.html" class="active">#PORTFOLIO</a>
+    <a href="contact.html">#CONTACT</a>
+  </nav>
+</header>
+
+<div class="wrap">
+  <header class="page-head">
+    <h1>#PORTFOLIOS</h1>
+    <p>Selected projects — click an image to open the project.</p>
   </header>
 
-  <div class="wrap">
-    <header class="page-head">
-      <h1>#PORTFOLIOS</h1>
-      <p>Selected projects — click an image to open the project.</p>
-    </header>
+  <section class="grid" aria-label="Project grid">
+    <!-- Card 1 -->
+    <article class="card" id="onlyfriends">
+      <figure class="media">
+        <a href="https://example.com/project-1" target="_blank" rel="noopener noreferrer" aria-label="Open OnlyFriends project">
+          <img alt="OnlyFriends preview" src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'%3E%3Crect width='100%25' height='100%25' fill='%23e9ecf3'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23666' font-size='32'%3EOnlyFriends%3C/text%3E%3C/svg%3E">
+          <span class="visit">Visit project ↗</span>
+        </a>
+      </figure>
+      <div class="body">
+        <h3 class="title">Project One — OnlyFriends</h3>
+        <p class="desc">A prototype social app built with Xcode: create accounts, add friends, and unlock friends with varying rarity for a gamified experience.</p>
+        <p class="more">Built collaboratively in class, focused on user engagement, personalized profiles, and a unique rarity system.</p>
+        <button class="toggle" aria-expanded="false">Show more</button>
+      </div>
+    </article>
 
-    <section class="grid" aria-label="Project grid">
-      <!-- Card 1: image left -->
-      <article class="card">
-        <figure class="media">
-          <a href="https://example.com/project-1" target="_blank" rel="noopener noreferrer" aria-label="Open Project 1">
-            <img src="https://picsum.photos/seed/p1/1200/800" alt="Project 1 preview">
-            <span class="visit">Visit project ↗</span>
-          </a>
-        </figure>
-        <div class="body">
-          <h3 class="title">Project One — OnlyFriends</h3>
-          <p class="desc">OnlyFriends is a prototype social app developed using Xcode, showcasing my coding skills by allowing users to create accounts, add friends, and unlock new friends with varying rarity levels for a gamified experience</p>
-          <p class="more">Developed collaboratively in my computer science class, this app emphasizes creativity and user engagement, featuring personalized profiles and a unique rarity system for friendships.</p>
-          <button class="toggle" data-target="more-1" aria-expanded="false" aria-controls="more-1">Show more</button>
-          <span id="more-1" hidden></span>
-        </div>
-      </article>
+    <!-- Card 2 -->
+    <article class="card alt" id="slots">
+      <div class="body">
+        <h3 class="title">Project Two — Slots App</h3>
+        <p class="desc">A simple Xcode game where users spin slots to gain or lose credits, capturing the excitement without real stakes.</p>
+        <p class="more">Developed independently with a clean interface for tracking credits and quick feedback loops.</p>
+        <button class="toggle" aria-expanded="false">Show more</button>
+      </div>
+      <figure class="media">
+        <a href="https://example.com/project-2" target="_blank" rel="noopener noreferrer" aria-label="Open Slots App project">
+          <img alt="Slots App preview" src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'%3E%3Crect width='100%25' height='100%25' fill='%23e9ecf3'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23666' font-size='32'%3ESlots%3C/text%3E%3C/svg%3E">
+          <span class="visit">Visit project ↗</span>
+        </a>
+      </figure>
+    </article>
 
-      <!-- Card 2: image right -->
-      <article class="card alt">
-        <div class="body">
-          <h3 class="title">Project Two — Task Flow</h3>
-          <p class="desc">The Slots App is a fun prototype game created in Xcode, where users spin the slots to see whether they lose or gain credits, adding excitement and an element of chance.</p>
-          <p class="more">Developed independently in my computer science class, the app features a straightforward interface for tracking credits and provides an engaging way to enjoy the thrill of gambling without real stakes.</p>
-          <button class="toggle" data-target="more-2" aria-expanded="false" aria-controls="more-2">Show more</button>
-          <span id="more-2" hidden></span>
-        </div>
-        <figure class="media">
-          <a href="https://example.com/project-2" target="_blank" rel="noopener noreferrer" aria-label="Open Project 2">
-            <img src="https://picsum.photos/seed/p2/1200/800" alt="Project 2 preview">
-            <span class="visit">Visit project ↗</span>
-          </a>
-        </figure>
-      </article>
+    <!-- Card 3 -->
+    <article class="card" id="tennis-tracker">
+      <figure class="media">
+        <a href="https://example.com/project-3" target="_blank" rel="noopener noreferrer" aria-label="Open Tennis Stats Tracker project">
+          <img alt="Tennis Stats Tracker preview" src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'%3E%3Crect width='100%25' height='100%25' fill='%23e9ecf3'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23666' font-size='32'%3ETennis Stats Tracker%3C/text%3E%3C/svg%3E">
+          <span class="visit">Visit project ↗</span>
+        </a>
+      </figure>
+      <div class="body">
+        <h3 class="title">Project Three — Tennis Stats Tracker</h3>
+        <p class="desc">Track matches, serve percentages, and rally length with clean charts and simple inputs.</p>
+        <p class="more">PWA-ready, client-side storage, and a compact data model so logging a match takes under a minute.</p>
+        <button class="toggle" aria-expanded="false">Show more</button>
+      </div>
+    </article>
+  </section>
+</div>
 
-      <!-- Card 3: image left -->
-      <article class="card">
-        <figure class="media">
-          <a href="https://example.com/project-3" target="_blank" rel="noopener noreferrer" aria-label="Open Project 3">
-            <img src="https://picsum.photos/seed/p3/1200/800" alt="Project 3 preview">
-            <span class="visit">Visit project ↗</span>
-          </a>
-        </figure>
-        <div class="body">
-          <h3 class="title">Project Three — Tennis Stats Tracker</h3>
-          <p class="desc">Track matches, serve percentages, and rally length with clean charts and simple input after play.</p>
-          <p class="more">Uses PWA install, client‑side only storage, and a compact data model so recording a match takes under a minute.</p>
-          <button class="toggle" data-target="more-3" aria-expanded="false" aria-controls="more-3">Show more</button>
-          <span id="more-3" hidden></span>
-        </div>
-      </article>
-    </section>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="brand-badge">RB</div>
+      <div class="brand-meta">
+        <h3>RISHI BOYAT</h3>
+        <p>Design • Code • Create</p>
+      </div>
+    </div>
+
+    <div class="footer-contacts">
+      <h3 class="footer-title">#CONTACTS:</h3>
+      <nav class="contact-links" aria-label="Social links">
+        <a href="contact.html">Contact Form</a>
+        <a href="mailto:rishi.boyat@gmail.com">Gmail</a>
+        <a href="https://github.com/KingRB04122009" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://instagram.com/rishiboyat12" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </nav>
+    </div>
   </div>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <!-- Brand block -->
-      <div class="footer-brand">
-        <div class="brand-badge">RB</div>
-        <div class="brand-meta">
-          <h3>RISHI BOYAT</h3>
-          <p>Design • Code • Create</p>
-        </div>
-      </div>
-
-      <!-- Contacts -->
-      <div class="footer-contacts">
-        <h3 class="footer-title">#CONTACTS:</h3>
-        <nav class="contact-links" aria-label="Social links">
-          <a href="https://github.com/KingRB04122009" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="mailto:rishi.boyat@gmail.com">Gmail</a>
-          <a href="https://instagram.com/rishiboyat12" target="_blank" rel="noopener noreferrer">Instagram</a>
-        </nav>
-      </div>
+  <div class="footer-bottom">
+    <div class="chips">
+      <span class="chip">#on_court 🎾</span>
+      <span class="chip">#in_class 💻</span>
+      <span class="chip">#in_code 📚</span>
     </div>
+    <p class="legal">© <span id="year">2025</span> Rishi Boyat. All rights reserved.</p>
+  </div>
+</footer>
 
-    <div class="footer-bottom">
-      <div class="chips">
-        <span class="chip">#on_court 🎾</span>
-        <span class="chip">#in_class 💻</span>
-        <span class="chip">#in_code 📚</span>
-      </div>
-      <p class="legal">© <span id="year">2025</span> Rishi Boyat. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script>
-    // Expand/collapse logic with accessible state updates
-    document.querySelectorAll('.toggle').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const moreP = btn.previousElementSibling; // .more paragraph
-        const expanded = btn.getAttribute('aria-expanded') === 'true';
-        moreP.style.display = expanded ? 'none' : 'block';
-        btn.setAttribute('aria-expanded', String(!expanded));
-        btn.textContent = expanded ? 'Show more' : 'Show less';
-      });
+<script>
+  // Toggle "show more"
+  document.querySelectorAll('.card .toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const more = btn.parentElement.querySelector('.more');
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      more.style.display = expanded ? 'none' : 'block';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      btn.textContent = expanded ? 'Show more' : 'Show less';
     });
+  });
 
-    // Update year automatically
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  // Update year automatically
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
