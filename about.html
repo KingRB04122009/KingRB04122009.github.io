@@ -69,8 +69,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #666;
-  font-weight: 700;
+}
+
+/* Ensure image fills the avatar frame nicely */
+.about-avatar img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .about-tag{
@@ -102,82 +108,82 @@
 .about-list li::before{ content: "• "; color: #fff; }
 
 /* Experience text enlarged for comfortable reading on wide layouts */
-    .about-text{
-      max-width: 70ch;
-    }
-    .about-text p{
-      margin: 0 0 14px;
-      color: #333;
-      line-height: 1.65;
-      font-size: 18px;
-    }
+.about-text{
+  max-width: 70ch;
+}
+.about-text p{
+  margin: 0 0 14px;
+  color: #333;
+  line-height: 1.65;
+  font-size: 18px;
+}
 
-    .exp-title{
-      display: inline-block;
-      background: #c9ffa0;
-      color: #222;
-      padding: 10px 14px;
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 28px;
-      font-family: ui-monospace, Menlo, Consolas, monospace;
-      margin: 0 0 18px;
-    }
+.exp-title{
+  display: inline-block;
+  background: #c9ffa0;
+  color: #222;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 28px;
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  margin: 0 0 18px;
+}
 
-    /* Visual timeline */
-    .timeline{
-      position: relative;
-      margin-top: 8px;
-      padding-left: 26px;
-    }
-    .timeline::before{
-      content: "";
-      position: absolute;
-      left: 10px;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: #e6e6ef;
-    }
-    .t-item{
-      position: relative;
-      margin: 18px 0;
-      padding-left: 10px;
-    }
-    .t-item::before{
-      content: "";
-      position: absolute;
-      left: -6px;
-      top: 4px;
-      width: 12px;
-      height: 12px;
-      background: #6a11cb;
-      border: 2px solid #fff;
-      border-radius: 50%;
-      box-shadow: 0 0 0 2px #e6e6ef;
-    }
-    .t-title{
-      margin: 0 0 6px;
-      font-weight: 700;
-      margin-left: 20px;
-    }
-    .t-meta{
-      margin: 0 0 8px;
-      color: #666;
-      font-size: 14px;
-      margin-left: 20px;
-    }
-    .t-desc{
-      margin: 0;
-      color: #333;
-      margin-left: 20px;
-    }
+/* Visual timeline */
+.timeline{
+  position: relative;
+  margin-top: 8px;
+  padding-left: 26px;
+}
+.timeline::before{
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #e6e6ef;
+}
+.t-item{
+  position: relative;
+  margin: 18px 0;
+  padding-left: 10px;
+}
+.t-item::before{
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  background: #6a11cb;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #e6e6ef;
+}
+.t-title{
+  margin: 0 0 6px;
+  font-weight: 700;
+  margin-left: 20px;
+}
+.t-meta{
+  margin: 0 0 8px;
+  color: #666;
+  font-size: 14px;
+  margin-left: 20px;
+}
+.t-desc{
+  margin: 0;
+  color: #333;
+  margin-left: 20px;
+}
 
-    @media (max-width: 640px){
-      .about-card{ padding: 90px 20px 20px; }
-      .about-avatar{ width: 140px; height: 140px; top: -40px; }
-      .about-text p{ font-size: 16px; }
-    }
+@media (max-width: 640px){
+  .about-card{ padding: 90px 20px 20px; }
+  .about-avatar{ width: 140px; height: 140px; top: -40px; }
+  .about-text p{ font-size: 16px; }
+}
 </style>
 <body>
 
@@ -196,7 +202,11 @@
     <div class="about-grid wide">
       <!-- Left: about card -->
       <div class="about-card">
-        <div class="about-avatar" aria-label="image placeholder">Image Placeholder</div>
+        <!-- Replace the src value with your image URL -->
+        <div class="about-avatar" role="img" aria-label="Profile image">
+          <img src="picture-70c20bb6fb41374b83eafc583edce2e0_66ecf325489f5.jpg" alt="Rishi Boyat profile photo">
+        </div>
+
         <div class="about-tag about-tag--big">#ABOUT_ME</div>
         <ul class="about-list">
           <li>Born in Japan, I moved to Hong Kong and studied at WIS until Year 9 before transferring to HKIS for my continued education.</li>
@@ -205,7 +215,7 @@
         </ul>
       </div>
 
-<div class="about-text">
+      <div class="about-text">
         <h2 class="exp-title">#MY_EXPERIENCE</h2>
 
         <div class="timeline" aria-label="Timeline of milestones">
@@ -227,7 +237,6 @@
             <p class="t-desc">I am excited to continue my coding journey, exploring new technologies and expanding my skill set further.</p>
           </div>
 
-          </div>
         </div>
       </div>
     </div>
